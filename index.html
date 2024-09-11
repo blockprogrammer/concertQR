@@ -9,7 +9,7 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background-image: url('https://raw.githubusercontent.com/blockprogrammer/concertqr/main/background.jpeg');
+            background-image: url('https://raw.githubusercontent.com/blockprogrammer/concertQR/main/background.jpeg');
             background-size: cover;
             background-position: center;
             color: #fff; /* White text for readability */
@@ -40,12 +40,19 @@
             width: 90%;
         }
 
+        /* Photo container to hold two images side by side */
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between images */
+            margin-top: 20px;
+        }
+
         /* Image Styling */
         .photo img {
             max-width: 300px;
             height: auto;
             border-radius: 12px;
-            margin-top: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
@@ -56,7 +63,7 @@
 
         iframe {
             border-radius: 12px;
-            width: 250px;
+            width: 300px;
             height: 80px; /* Smaller height */
         }
 
@@ -70,6 +77,9 @@
             }
             .photo img {
                 max-width: 90%;
+            }
+            .photo-container {
+                flex-direction: column;
             }
             iframe {
                 width: 220px;
@@ -86,16 +96,21 @@
         frameBorder="0" 
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
         loading="lazy">
-</iframe>
+        </iframe>
     </div>
 
     <!-- Sentimental Header and Message -->
     <h1>Surprise!!!</h1>
-    <p>Im shocked you havent caught onto the hints, but I got us tix to Cigs After Sex, I love you so much Natalie, thank you for two years!</p>
+    <p>Im shocked you haven't caught onto the hints, but I got us tix to Cigs After Sex, I love you so much Natalie, thank you for two years!</p>
 
-    <!-- Picture of You and Her -->
-    <div class="photo">
-        <img src="https://raw.githubusercontent.com/blockprogrammer/concertqr/main/IMG_0360.jpeg" alt="Picture of us">
+    <!-- Picture of You and Her, Two Images Side by Side -->
+    <div class="photo-container">
+        <div class="photo">
+            <img src="https://raw.githubusercontent.com/blockprogrammer/concertQR/main/IMG_0360.jpeg" alt="Picture of us">
+        </div>
+        <div class="photo">
+            <img src="https://raw.githubusercontent.com/blockprogrammer/concertQR/main/IMG_0403.jpeg" alt="Picture of us">
+        </div>
     </div>
 </body>
 </html>
