@@ -9,17 +9,17 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background-image: url('https://raw.githubusercontent.com/blockprogrammer/concertQR/main/background.jpeg');
+            background-image: url('https://raw.githubusercontent.com/blockprogrammer/concertqr/main/background.jpeg');
             background-size: cover;
             background-position: center;
-            color: #fff; /* White text for readability */
+            color: #fff;
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         /* Text Shadow for readability */
@@ -46,14 +46,17 @@
             justify-content: center;
             gap: 20px; /* Space between images */
             margin-top: 20px;
+            flex-wrap: wrap; /* Allows images to stack on smaller screens */
         }
 
         /* Image Styling */
         .photo img {
-            max-width: 300px;
+            max-width: 100%; /* Ensures images scale down */
             height: auto;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            flex: 1 1 300px; /* Ensures both images take equal space and can scale */
+            max-width: 300px; /* Max width for larger screens */
         }
 
         /* Spotify Player Styling */
@@ -63,7 +66,8 @@
 
         iframe {
             border-radius: 12px;
-            width: 300px;
+            width: 100%; /* Full width for mobile responsiveness */
+            max-width: 300px; /* Ensures it doesn't grow too large on desktop */
             height: 80px; /* Smaller height */
         }
 
@@ -72,18 +76,21 @@
             h1 {
                 font-size: 2rem;
             }
+
             p {
                 font-size: 1rem;
             }
-            .photo img {
-                max-width: 90%;
-            }
+
+            /* Stack images vertically on small screens */
             .photo-container {
                 flex-direction: column;
+                gap: 10px;
             }
-            iframe {
-                width: 220px;
-                height: 70px;
+
+            /* Images take full width on mobile */
+            .photo img {
+                max-width: 90%;
+                margin: 0 auto;
             }
         }
     </style>
@@ -91,7 +98,7 @@
 <body>
     <!-- Spotify Embed at the Top -->
     <div class="spotify-player">
-        <iframe style="border-radius:12px; width:300px; height:80px;" 
+        <iframe style="border-radius:12px;" 
         src="https://open.spotify.com/embed/track/0yc6Gst2xkRu0eMLeRMGCX?utm_source=generator&theme=0&autoplay=1" 
         frameBorder="0" 
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
@@ -106,10 +113,10 @@
     <!-- Picture of You and Her, Two Images Side by Side -->
     <div class="photo-container">
         <div class="photo">
-            <img src="https://raw.githubusercontent.com/blockprogrammer/concertQR/main/IMG_0360.jpeg" alt="Picture of us">
+            <img src="https://raw.githubusercontent.com/blockprogrammer/concertqr/main/IMG_0360.jpeg" alt="Picture of us">
         </div>
         <div class="photo">
-            <img src="https://raw.githubusercontent.com/blockprogrammer/concertQR/main/IMG_0403.jpeg" alt="Picture of us">
+            <img src="https://raw.githubusercontent.com/blockprogrammer/concertqr/main/IMG_0403.jpeg" alt="Picture of us">
         </div>
     </div>
 </body>
